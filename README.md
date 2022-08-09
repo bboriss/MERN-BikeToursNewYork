@@ -12,19 +12,6 @@ It requires basic authentication and authorization. If user wants to see tour de
 Before logging in, registration should be done through the service like POSTMAN, Talend API Tester or some other service that represents api.
 Authentication is done using JWT.
 
-Users can search tours by name or by key word. That requires index in the MongoDB since there are 10 000 tours in the database.
-Index is set on "start station name" field and should be like :
-{
-  "mappings": {
-    "dynamic": true,
-    "fields": {
-      "start station name": {
-        "type": "string"
-      }
-    }
-  }
-}
-
 
 ## Prerequisites
 * MongoBD
@@ -52,6 +39,19 @@ JWT_SECRET = create your own secret
 JWT_EXPIRES_IN = 60min
 JWT_COOKIE_EXPIRES_IN = 10
 ```
+
+Users can search tours by name or by key word. That requires index in the MongoDB since there are 10 000 tours in the database.
+Index is set on "start station name" field and should be like :
+{
+  "mappings": {
+    "dynamic": true,
+    "fields": {
+      "start station name": {
+        "type": "string"
+      }
+    }
+  }
+}
 
 To run this project, install it locally using npm:
 
