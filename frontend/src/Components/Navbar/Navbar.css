@@ -1,0 +1,30 @@
+.Navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 10px 0;
+  text-decoration: none;
+  margin-bottom: auto;
+  margin-right: 30px;
+}
+
+.Navbar ul li {
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 24px;
+  font-weight: 330;
+  color: #f6f6f6;
+}
+
+.Navbar ul li a {
+  display: block;
+  text-decoration: none;
+  background-color: #f6be00;
+  border-radius: 4px;
+  color: black;
+  padding: 7px;
+  transition: 0.2s ease-in;
+}
+
+.Navbar ul li a:hover {
+  color: #f6f6f6;
+}
