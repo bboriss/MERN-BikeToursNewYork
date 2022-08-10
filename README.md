@@ -10,7 +10,7 @@
 This project is a simple Bike Tours Displayer. It fetches data from MongoDB Atlas Sample Training Collection (sample_training.trips).
 It requires basic authentication and authorization. If user wants to see tour details and map with instructions, first has to login.
 Before logging in, registration should be done through the service like POSTMAN, Talend API Tester or some other service that represents api.
-Authentication is done using JWT.
+Authentication is done using JWT package.
 
 
 ## Prerequisites
@@ -56,7 +56,7 @@ Index is set on "start station name" field and should be like :
 To run this project, install it locally using npm:
 
 ```
-$ cd ../api
+$ cd ./api
 $ npm install
 $ npm run dev
 ```
@@ -65,7 +65,7 @@ $ npm run dev
 To run this project, install it locally using npm:
 
 ```
-$ cd ../frontend
+$ cd ./frontend
 $ npm install
 $ npm start
 ```
