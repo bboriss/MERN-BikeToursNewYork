@@ -33,7 +33,7 @@ Project is created with:
 ### Prepare your .env configuration
 You need to add 
 ```
-MONGO_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<username>:<password>@nodeexpressprojects.uclwc.mongodb.net/sample_training?retryWrites=true&w=majority
 BIKETRIPS_NS = sample_training
 JWT_SECRET = create your own secret
 JWT_EXPIRES_IN = 60min
