@@ -1,0 +1,15 @@
+.card {
+  max-width: 350px;
+  height: 490px;
+}
+
+.card-img-top {
+  height: 15rem;
+  object-fit: cover;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #5b5b5b;
+  color: #f6be00;
+}

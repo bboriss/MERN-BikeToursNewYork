@@ -1,0 +1,10 @@
+.customOverlay {
+  /* background: rgba(246, 190, 0, 0.15); */
+}
+.customModal {
+  border: 1.5px solid black;
+  border-radius: 4px;
+  background: #fbfbfb;
+  max-width: 300px;
+  width: 100%;
+}
