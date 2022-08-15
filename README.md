@@ -8,10 +8,7 @@
 
 ## General info
 This project is a simple Bike Tours Displayer. It fetches data from MongoDB Atlas Sample Training Collection (sample_training.trips).
-It requires basic authentication and authorization. If user wants to see tour details and map with instructions, first has to login.
-Before logging in, registration should be done through the service like POSTMAN, Talend API Tester or some other service that represents api.
-Authentication is done using JWT package.
-
+It requires basic authentication. If user wants to see tour details and map with instructions, first has to login.
 
 ## Prerequisites
 * MongoBD
