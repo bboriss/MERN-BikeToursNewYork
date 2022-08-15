@@ -8,7 +8,7 @@
 
 ## General info
 This project is a simple Bike Tours Displayer. It fetches data from MongoDB Atlas Sample Training Collection (sample_training.trips).
-It requires basic authentication. If user wants to see tour details and map with instructions, first has to login.
+It requires basic authentication. If user wants to see tour details and map with instructions, first has to register and login.
 
 ## Prerequisites
 * MongoBD
