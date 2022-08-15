@@ -16,10 +16,9 @@ const {
 
 router.route("/auth/register").post(register);
 router.route("/auth/login").post(login);
+router.route("/logout").post(logout);
 
 router.use(protect);
-
-router.route("/logout").post(logout);
 
 router.use(restrictTo("admin"));
 

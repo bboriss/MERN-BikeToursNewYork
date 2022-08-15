@@ -6,13 +6,15 @@ const {
   addNewTour,
   updateTour,
   deleteTourById,
-  getByStartLocation,
+  searchByStartLocation,
+  sortByDuration,
 } = require("../controllers/tours.controller.js");
 
 const { protect, restrictTo } = require("../controllers/auth.controller");
 
 router.route("/").get(getAllTours).post(restrictTo("admin"), addNewTour);
-router.route("/searchByStartLocation").get(getByStartLocation);
+router.route("/searchByStartLocation").get(searchByStartLocation);
+router.route("/sortByDuration").get(sortByDuration);
 
 router.use(protect);
 router

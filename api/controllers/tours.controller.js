@@ -20,7 +20,6 @@ getAllTours = catchAsync(async (req, res) => {
   // sorting
   if (req.query.sort) {
     const sortBy = req.query.sort.split(",").join(" ");
-    console.log(sortBy);
     query = query.sort(sortBy);
   }
   // else {
@@ -64,8 +63,50 @@ getAllTours = catchAsync(async (req, res) => {
   });
 });
 
-getByStartLocation = catchAsync(async (req, res) => {
+// SORT BY DURATION
+sortByDuration = catchAsync(async (req, res) => {
+  const queryObj = { ...req.query };
+
+  const exclude = ["page", "sort", "limit"];
+  exclude.forEach((el) => delete queryObj[el]);
+
+  // advanced filtering
+  let queryStr = JSON.stringify(queryObj);
+  queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
+  let query = Tour.find(JSON.parse(queryStr));
+  // sorting
+  const sign = req.query.sort;
+  query = query.sort(`${sign}tripduration`);
+  // totalNumOfResults
+  const totalNumFound = await Tour.aggregate([
+    {
+      $count: "totalNumFound",
+    },
+  ]);
+
+  // pagination
+  const page = req.query.page * 1 || 1;
+  const limit = req.query.limit * 1 || 8;
+  const skip = (page - 1) * limit;
+
+  query = query.skip(skip).limit(limit);
+  const tours = await query;
+  console.log(tours);
+  res.status(201).json({
+    status: "success",
+    totalNum: totalNumFound[0].totalNumFound,
+    results: tours.length,
+    data: {
+      tours,
+    },
+  });
+});
+
+// SEARCH BY START LOCATION NAME
+searchByStartLocation = catchAsync(async (req, res) => {
   const searchParam = req.query["start station name"];
+
+  // console.log(sort);
   // pagination
   const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 8;
@@ -178,5 +219,6 @@ module.exports = {
   addNewTour,
   updateTour,
   deleteTourById,
-  getByStartLocation,
+  searchByStartLocation,
+  sortByDuration,
 };
