@@ -2,6 +2,7 @@ import "./Navbar.css";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthContext";
+
 import ToursDataService from "../../Services/tours";
 
 const Navbar = () => {
@@ -16,7 +17,9 @@ const Navbar = () => {
     <nav className="Navbar">
       <ul>
         <li>
-          <NavLink to="/tours">All Tours</NavLink>
+          <NavLink reloadDocument to="/tours">
+            All Tours
+          </NavLink>
         </li>
         {!user && (
           <li>
