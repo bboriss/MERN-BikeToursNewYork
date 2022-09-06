@@ -85,7 +85,11 @@ const Login = () => {
           <button onClick={handleClick} className="btn btn-outline-dark m-3">
             Login
           </button>
-          {error && <span>{error.message}</span>}
+          {error && (
+            <span style={{ color: "red", textAlign: "center" }}>
+              {error.response.data.message}
+            </span>
+          )}
         </div>
       </Modal>
     </div>

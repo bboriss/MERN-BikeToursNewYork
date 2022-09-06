@@ -16,7 +16,7 @@ const {
 
 router.route("/auth/register").post(register);
 router.route("/auth/login").post(login);
-router.route("/logout").post(logout);
+router.route("/auth/logout").post(logout);
 
 router.use(protect);
 

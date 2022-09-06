@@ -14,6 +14,7 @@ const ToursPage = () => {
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [searchResult, setSearchResult] = useState(false);
+  const [emptySearch, setEmptySearch] = useState(false);
   const [totalSearchNumber, setTotalSearchNumber] = useState(1);
   const [errorPage, setErrorPage] = useState(false);
   const [filteredSearch, setFilteredSearch] = useState(false);
@@ -95,7 +96,12 @@ const ToursPage = () => {
   };
 
   const findByName = (e) => {
+    if (searchName === "") {
+      setEmptySearch(true);
+      return;
+    }
     if (searchNameHelper !== "") {
+      setEmptySearch(false);
       find(searchNameHelper, page);
       setSearchName("");
     }
@@ -114,6 +120,7 @@ const ToursPage = () => {
         setLoading(false);
         setErrorPage(true);
       } else {
+        setEmptySearch(false);
         setTours(data);
         setLoading(false);
         setTotalSearchNumber(response.data.totalNum);
@@ -138,23 +145,27 @@ const ToursPage = () => {
       </div>
       <div className="input-group">
         <div className="form-outline">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search by start destination"
-            value={searchName}
-            onChange={onChangeSearchName}
-            required
-          />
-          <div className="input-group-append">
-            <button
-              className="btn btn-outline-secondary"
-              type="button"
-              onClick={findByName}
-            >
-              Search
-            </button>
+          <div className="nameSearch">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search by start destination"
+              value={searchName}
+              onChange={onChangeSearchName}
+            />
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={findByName}
+              >
+                Search
+              </button>
+            </div>
           </div>
+          {emptySearch && (
+            <p className="spanMsg">Please provide at least one word</p>
+          )}
         </div>
         {!errorPage && (
           <div className="form-outline">

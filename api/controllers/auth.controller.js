@@ -75,13 +75,13 @@ login = catchAsync(async (req, res, next) => {
   });
 });
 
-logout = (req, res) => {
+logout = catchAsync(async (req, res, next) => {
   res.cookie("jwt", "loggedout", {
     expires: new Date(Date.now() + 10 * 60 * 1000),
   });
 
   res.status(200).json({ status: "success" });
-};
+});
 
 // PROTECTING ROUTES MIDDLEWARES
 
