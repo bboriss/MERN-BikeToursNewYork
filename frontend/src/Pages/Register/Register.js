@@ -92,7 +92,7 @@ const Register = () => {
             <button onClick={handleClick} className="btn btn-outline-dark m-3">
               Register
             </button>
-            {error && <span>{error.message}</span>}
+            {error && <span>{error.response.data.error.message}</span>}
           </div>
         </div>
       </Modal>

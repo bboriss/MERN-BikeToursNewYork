@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { uniqueNamesGenerator, names } from "unique-names-generator";
-import ToursDataService from "../../Services/tours";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { MapContainer, TileLayer, LayersControl } from "react-leaflet";
 import { SpinnerCircular } from "spinners-react";
 import Routing from "./RoutingMachine";
+import ToursDataService from "../../Services/tours";
 import { AuthContext } from "../../Contexts/AuthContext";
 
 import "./TourDetailsPage.css";
@@ -92,6 +92,8 @@ const TourDetailsPage = () => {
     }
   };
 
+  const { BaseLayer } = LayersControl;
+
   return (
     <section>
       {loading && (
@@ -111,15 +113,18 @@ const TourDetailsPage = () => {
             <div className="col-md-6 map">
               {
                 <MapContainer scrollWheelZoom={true}>
-                  <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                  />
-
-                  <Routing
-                    geoStartData={geoStartData}
-                    geoEndData={geoEndData}
-                  />
+                  <LayersControl>
+                    <BaseLayer checked name="OpenStreetMap">
+                      <TileLayer
+                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                      />
+                      <Routing
+                        geoStartData={geoStartData}
+                        geoEndData={geoEndData}
+                      />
+                    </BaseLayer>
+                  </LayersControl>
                 </MapContainer>
               }
             </div>

@@ -20,6 +20,10 @@ export default function Routing({ geoStartData, geoEndData }) {
     if (!map) return;
 
     const routingControl = L.Routing.control({
+      show: false,
+      // addWaypoints: false,
+      // draggableWaypoints: false,
+      // fitSelectedRoutes: false,
       waypoints: [L.latLng(startX, startY), L.latLng(endX, endY)],
       routeWhileDragging: true,
     }).addTo(map);

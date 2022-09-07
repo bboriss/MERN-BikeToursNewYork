@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const crypto = require("crypto");
+// const crypto = require("crypto");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 
@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      require: [true, "Please tell us your name!"],
+      require: [true, "Please provide your username"],
       trim: true,
       unique: true,
     },
