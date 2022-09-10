@@ -92,6 +92,10 @@ const TourDetailsPage = () => {
     }
   };
 
+  // const backClick = () => {
+  //   navigate(-1);
+  // };
+
   const { BaseLayer } = LayersControl;
 
   return (
@@ -156,6 +160,7 @@ const TourDetailsPage = () => {
                   ? `easy`
                   : `medium`}
               </p>
+              {/* <button onClick={backClick}>Back</button> */}
             </div>
           </div>
         </div>

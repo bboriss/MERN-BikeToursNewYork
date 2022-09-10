@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.App > div {
+  min-height: 73vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

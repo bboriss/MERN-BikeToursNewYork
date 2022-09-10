@@ -42,7 +42,7 @@ const ToursPage = () => {
     } else if (searchNameHelper !== "") {
       console.log(searchNameHelper);
       console.log("ideee2");
-      findByName(page);
+      findByName(newPage);
     } else {
       console.log("ideee3");
       retrieveTours(page);
@@ -79,6 +79,7 @@ const ToursPage = () => {
       const data = response.data.data.data;
       console.log(data);
       if (data.length === 0) {
+        console.log("usloo ovdeea");
         setLoading(false);
         setErrorPage(true);
       } else {
@@ -95,8 +96,8 @@ const ToursPage = () => {
     }
   };
 
-  const findByName = (e) => {
-    if (searchName === "") {
+  const findByName = (page) => {
+    if (searchNameHelper === "") {
       setEmptySearch(true);
       return;
     }
