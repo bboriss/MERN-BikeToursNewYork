@@ -28,7 +28,7 @@ register = catchAsync(async (req, res, next) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
-    // httpOnly: true,
+    httpOnly: true,
   });
 
   res.status(201).json({
@@ -64,6 +64,7 @@ login = catchAsync(async (req, res, next) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
+    httpOnly: true,
   });
 
   res.status(200).json({

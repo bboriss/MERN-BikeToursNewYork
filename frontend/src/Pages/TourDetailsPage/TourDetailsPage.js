@@ -64,7 +64,7 @@ const TourDetailsPage = () => {
     const token = localStorage.getItem("token");
     const config = {
       headers: {
-        "Content-Type": "application/json",
+        // "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     };
@@ -144,6 +144,7 @@ const TourDetailsPage = () => {
                 <strong>End station name: </strong>
                 {tour["end station name"]}
               </p>
+
               <p className="box-title mt-2">
                 <strong>Duration: </strong>
                 {portionTime(tour.tripduration)}
@@ -157,8 +158,8 @@ const TourDetailsPage = () => {
                 {tour.tripduration < 3600
                   ? `easy`
                   : tour.tripduration < 3600 * 3
-                  ? `easy`
-                  : `medium`}
+                  ? `medium`
+                  : `hard`}
               </p>
               {/* <button onClick={backClick}>Back</button> */}
             </div>
