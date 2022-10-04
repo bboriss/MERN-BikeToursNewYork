@@ -32,6 +32,10 @@
   color: #61dafb;
 }
 
+.form-control::placeholder {
+  color: #f6be00;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

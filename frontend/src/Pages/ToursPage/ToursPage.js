@@ -149,7 +149,7 @@ const ToursPage = () => {
           <div className="nameSearch">
             <input
               type="text"
-              className="form-control"
+              className="form-control searchInput"
               placeholder="Search by start destination"
               value={searchName}
               onChange={onChangeSearchName}

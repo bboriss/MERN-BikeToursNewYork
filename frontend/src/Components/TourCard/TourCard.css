@@ -1,6 +1,8 @@
-.card {
-  max-width: 350px;
-  height: 490px;
+.card-body {
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
+  border-radius: 0.7rem;
+  min-height: 200px;
 }
 
 .card-img-top {
@@ -8,8 +10,30 @@
   object-fit: cover;
 }
 
-.btn:hover,
-.btn:focus {
+.btn {
   background-color: #5b5b5b;
   color: #f6be00;
+
+  border: 1.8px solid black;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: rgba(246, 190, 0, 1);
+  color: black;
+}
+
+.map_mainPage {
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  padding: 0;
+  min-height: 60%;
+  min-width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.leaflet-container {
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
 }

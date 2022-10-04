@@ -5,7 +5,7 @@
   color: #f6f6f6;
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   padding-left: 30px;
