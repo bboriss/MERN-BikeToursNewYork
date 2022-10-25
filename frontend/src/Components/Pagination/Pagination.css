@@ -1,4 +1,9 @@
 .pagination {
+  border: 1.5px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(10px);
+  padding: 10px;
   list-style: none;
   display: flex;
   margin-bottom: 4rem;

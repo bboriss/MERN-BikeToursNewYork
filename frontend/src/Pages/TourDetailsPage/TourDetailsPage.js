@@ -112,7 +112,7 @@ const TourDetailsPage = () => {
         </div>
       )}
       {!loading && (
-        <div className="container mapContainer px-4 px-lg-5 my-5">
+        <div className="container mapContainer px-4 px-lg-5">
           <div className="row gx-4 gx-lg-5 secondContainer">
             <div className="col-md-6 map">
               {

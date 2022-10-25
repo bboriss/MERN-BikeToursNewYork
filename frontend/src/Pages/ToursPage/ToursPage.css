@@ -6,8 +6,8 @@
   padding-left: 50px;
   padding-right: 50px;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4)
     ),
     url("https://images.unsplash.com/photo-1653501183272-091c8b887b59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1OTAwNDA3Mg&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080");
   background-position: center;
@@ -60,7 +60,7 @@
 }
 
 .searchInput::placeholder {
-  color: #f6be00;
+  color: black;
 }
 
 .form-control {
@@ -91,7 +91,7 @@
   border: 1.5px solid black;
   background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(10px);
-  color: #f6be00;
+  color: black;
 }
 
 .form_custom:focus {
