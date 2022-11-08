@@ -17,10 +17,9 @@
 
 .card {
   max-width: 350px;
-  height: 590px;
+  height: 640px;
   background-color: rgba(0, 0, 0, 0);
   transition: 0.5s;
-  border: 1;
   margin-bottom: 30px;
   border: 1.5px solid black;
   border-radius: 0.7rem;
