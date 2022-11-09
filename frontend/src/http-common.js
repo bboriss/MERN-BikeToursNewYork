@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://localhost:8800/",
+  baseURL: "https://mern-biketoursnewyork-production.up.railway.app/",
   // headers: {
   //   "Access-Control-Allow-Origin": "*",
   //   "Content-type": "application/json",
