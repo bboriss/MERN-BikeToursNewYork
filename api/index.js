@@ -10,6 +10,7 @@ const globalErrorHandler = require("./controllers/error.controller");
 
 const app = express();
 // Middlewares
+// upconfig
 app.use(cors());
 app.use(helmet());
 app.use(express.json());
