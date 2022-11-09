@@ -132,35 +132,37 @@ const TourDetailsPage = () => {
                 </MapContainer>
               }
             </div>
-            <div className="col-md-6 pt-4  info">
-              <p className="box-title mt-2">
-                <strong>Tour Information:</strong>
-              </p>
-              <p className="box-title mt-2">
-                <strong>Start station name :</strong>
-                {tour["start station name"]}
-              </p>
-              <p className="box-title mt-2">
-                <strong>End station name: </strong>
-                {tour["end station name"]}
-              </p>
+            <div className="col-md-6 info">
+              <div className="infoWrapper">
+                <p className="box-title mt-2">
+                  <strong>Tour Information:</strong>
+                </p>
+                <p className="box-title mt-2">
+                  <strong>Start station name :</strong>
+                  {tour["start station name"]}
+                </p>
+                <p className="box-title mt-2">
+                  <strong>End station name: </strong>
+                  {tour["end station name"]}
+                </p>
 
-              <p className="box-title mt-2">
-                <strong>Duration: </strong>
-                {portionTime(tour.tripduration)}
-              </p>
-              <p className="box-title mt-2">
-                <strong>Tour Creator: </strong>
-                {characterName}
-              </p>
-              <p className="box-title mt-2">
-                <strong>Difficulty: </strong>
-                {tour.tripduration < 3600
-                  ? `easy`
-                  : tour.tripduration < 3600 * 3
-                  ? `medium`
-                  : `hard`}
-              </p>
+                <p className="box-title mt-2">
+                  <strong>Duration: </strong>
+                  {portionTime(tour.tripduration)}
+                </p>
+                <p className="box-title mt-2">
+                  <strong>Tour Creator: </strong>
+                  {characterName}
+                </p>
+                <p className="box-title mt-2">
+                  <strong>Difficulty: </strong>
+                  {tour.tripduration < 3600
+                    ? `easy`
+                    : tour.tripduration < 3600 * 3
+                    ? `medium`
+                    : `hard`}
+                </p>
+              </div>
               {/* <button onClick={backClick}>Back</button> */}
             </div>
           </div>
