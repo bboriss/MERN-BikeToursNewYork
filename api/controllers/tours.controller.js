@@ -1,4 +1,4 @@
-const Tour = require("../models/tour.js");
+const Tour = require("../models/Tour.js");
 const AppError = require("../utils/appError");
 const catchAsync = require("../utils/asyncWrapper");
 
