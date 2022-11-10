@@ -1,5 +1,9 @@
 # MERN-BikeToursNewYork :bicyclist:
 
+
+## Link to the deployed version
+https://mern-bike-tours-new-york.vercel.app/tours#
+
 ## Table of contents
 * [General info](#general-info)
 * [Prerequisites](#prerequisites)
