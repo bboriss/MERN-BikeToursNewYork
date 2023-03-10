@@ -6,8 +6,9 @@ const catchAsync = require("../utils/asyncWrapper");
 getAllTours = catchAsync(async (req, res) => {
   // build query
   // filter page, sort and limit
-  const queryObj = { ...req.query };
 
+  const queryObj = { ...req.query };
+  console.log(queryObj);
   const exclude = ["page", "sort", "limit", "fields"];
   exclude.forEach((el) => delete queryObj[el]);
 
@@ -16,6 +17,7 @@ getAllTours = catchAsync(async (req, res) => {
   queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
   let query = Tour.find(JSON.parse(queryStr));
+  console.log(query);
 
   // sorting
   if (req.query.sort) {
@@ -41,7 +43,7 @@ getAllTours = catchAsync(async (req, res) => {
       $count: "totalNumFound",
     },
   ]);
-
+  // console.log(totalNumFound);
   // pagination
   const page = req.query.page * 1 || 1;
   const limit = req.query.limit * 1 || 8;
@@ -51,7 +53,7 @@ getAllTours = catchAsync(async (req, res) => {
 
   // EXECUTE QUERY
   const tours = await query;
-  // console.log(tours);
+  // console.log(totalNumFound[0].totalNumFound);
 
   res.status(201).json({
     status: "success",
